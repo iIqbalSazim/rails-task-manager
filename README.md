@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Create task models and database tables
+2. CRUD functionality for tasks
+    - Forms
+    - Validation
+    - Design Views
+3. Add validation and error handling
 
-Things you may want to cover:
 
-* Ruby version
+Good-to-have:
+- Task categorization
+- Authentication
+- Unit and integration tests
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
