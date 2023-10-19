@@ -8,5 +8,10 @@ class TasksController < ApplicationController
   end
 
   def create
+    current = params[:task]
+    @task = Task.new({"title": "#{current[:title]}", "body": "#{current[:body]}"})
+    if @task.save
+      redirect_to tasks_path, notice: "Successfully added new task"
+    end
   end
 end
