@@ -1,18 +1,1 @@
 <h1>Main page</h1>
-
-<% @tasks.each {|task| %>
-
-<main class="container my-5 rounded-5 d-flex flex-column">
-	<div class="card px-10 text-center bg-light shadow-sm">
-		<div class="card-header text-primary">
-			<%= task.title %>
-		</div>
-		<div class="card-body text-body">
-			<div class="card-text">
-				<%= task.body %>
-			</div>
-		</div>
-	</div>
-<main>
-
-<% } %>
