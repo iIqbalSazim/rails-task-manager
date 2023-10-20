@@ -13,8 +13,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    current = params[:task]
-    @task = Task.new({"title": "#{current[:title]}", "body": "#{current[:body]}"})
+    @task = Task.new(task_params)
 
     if @task.save
       redirect_to tasks_path, notice: "Successfully added new task"
@@ -27,11 +26,10 @@ class TasksController < ApplicationController
   end
 
   def update
-    edited = params[:task]
-    if @task.update({"title": "#{edited[:title]}", "body": "#{edited[:body]}"})
+    if @task.update(task_params)
       redirect_to tasks_path, notice: "Task was successfully updated"
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -41,6 +39,10 @@ class TasksController < ApplicationController
   end
 
   private
+
+  def task_params
+    params.require(:task).permit(:title, :body)
+  end
 
   def set_tweet
     @task = Task.find(params[:id])
