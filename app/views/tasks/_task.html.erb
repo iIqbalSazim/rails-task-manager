@@ -1,11 +1,16 @@
-<section class="container my-5 rounded-5 d-flex flex-column">
-	<div class="card px-10 text-center bg-light shadow-sm">
-		<div class="card-header text-primary">
+<section class="my-5 mx-auto rounded-5 d-flex flex-column">
+  <div class="card text-center bg-light shadow-sm">
+		<h3 class="card-header text-primary">
 			<%= task.title %>
-		</div>
+		</h3>
 		<div class="card-body text-body">
-			<div class="card-text">
-				<%= task.body %>
+			<div class="card-text d-flex justify-content-between">
+        <span><%= task.body %></span>
+        <div>
+          <%= link_to "Edit", "/tasks/#{task.id}/edit", class: "btn btn-secondary mx-2" %>
+          <span class="btn btn-danger mx-2">Destroy</span>
+          <%= link_to "Task details", "/tasks/#{task.id}", class: "btn btn-info mx-2" %>
+        </div>
 			</div>
 		</div>
 	</div>

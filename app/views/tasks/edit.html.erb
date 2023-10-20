@@ -1,0 +1,17 @@
+<%= form_with model: @task do |form| %>
+  <div class="container-xl text-center">
+    <h1 class="my-2">Edit task</h1>
+
+    <div class="row mb-3">
+      <%= form.label :title, class: "fs-3" %>
+      <%= form.text_field :title %>
+    </div>
+
+    <div class="row mb-3">
+      <%= form.label :description, class: "fs-3" %>
+      <%= form.text_area :body  %>
+    </div>
+
+    <%= form.submit "Submit", class: "my-2 btn btn-md btn-primary" %>
+  </div>
+<% end %>
