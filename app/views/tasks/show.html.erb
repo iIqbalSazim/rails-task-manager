@@ -3,3 +3,17 @@
 <h2>Title: <%= @task.title %></h1>
 
 <h3>Description: <%= @task.body %></h2>
+
+<h4 class="mt-5">Subtasks</h4>
+<% @task.subtasks.each do |subtask| %>
+  <ol class="list-group">
+  <li class="list-group-item d-flex justify-content-between">
+    <p>
+      <%= subtask.body %>
+    </p>
+    <%= link_to "Delete", [@task, subtask], data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>
+  </li>
+  </ol>
+<% end %>
+
+<%= render "subtask_form", task: @task %>

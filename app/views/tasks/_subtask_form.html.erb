@@ -1,0 +1,12 @@
+<%= form_with model: [task, task.subtasks.build] do |form| %>
+  <%= render "shared/errors", form: form %>
+  <div class="card bg-secondary-subtle my-5 mx-auto">
+    <div class="card-body">
+      <h3 class="card-title mb-3">Add subtask</h3>
+      <%= form.label :description, class: "form-label fs-5 fw-bold" %>
+      <%= form.text_area :body, class: "form-control" %>
+      <%= form.submit "Submit", class: "mt-4 btn btn-md btn-primary" %>
+      </div>
+  </div>
+<% end %>
+
